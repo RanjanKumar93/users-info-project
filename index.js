@@ -6,7 +6,7 @@ import env from "dotenv";
 
 const { Pool } = pg;
 const app = express();
-const port = 3000;
+const port = 9000;
 const saltRounds = 15;
 
 env.config();

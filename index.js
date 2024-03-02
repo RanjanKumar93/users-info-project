@@ -25,7 +25,7 @@ const pool = new Pool({
 pool.connect();
 
 app.get("/", (req, res) => {
-  res.send("home.ejs");
+  res.sendFile("home.ejs");
 });
 
 app.get("/login", (req, res) => {

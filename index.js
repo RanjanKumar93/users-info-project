@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import pg from "pg";
 import bcrypt from "bcrypt";
 import env from "dotenv";
+import path from "path";
+
 const { Pool } = pg;
 const app = express();
 const port = 9000;
@@ -10,7 +12,8 @@ const saltRounds = 15;
 
 env.config();
 
-app.use(express.static("public"));
+app.set("view engine", "ejs");
+app.set("views", path.resolve("./views"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -23,7 +26,6 @@ const pool = new Pool({
 });
 pool.connect();
 
-app.set("views", "./views");
 app.get("/", (req, res) => {
   res.render("home.ejs");
 });
@@ -125,5 +127,3 @@ app.post("/login", async (req, res) => {
 app.listen(port, () => {
   console.log(`Backend server is running on http://localhost:${port}`);
 });
-
-export default app;

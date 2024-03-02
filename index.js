@@ -3,7 +3,6 @@ import bodyParser from "body-parser";
 import pg from "pg";
 import bcrypt from "bcrypt";
 import env from "dotenv";
-app.set("views", "./views");
 const { Pool } = pg;
 const app = express();
 const port = 9000;
@@ -24,6 +23,7 @@ const pool = new Pool({
 });
 pool.connect();
 
+app.set("views", "./views");
 app.get("/", (req, res) => {
   res.render("home.ejs");
 });

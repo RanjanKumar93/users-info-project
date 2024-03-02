@@ -6,6 +6,7 @@
   >Home</a
 >
 <%if(locals.allUserData){%>
+<div class="flex flex-col">
 <div
   class="flex space-y-4 flex-col bg-violet-950 p-8 rounded-3xl"
 >
@@ -27,7 +28,7 @@
     </li>
     <% }); %>
   </ul>
-</div>
+</div></div>
 <%}else{%>
 <div class="flex space-y-4 flex-col bg-violet-950 p-8 rounded-3xl">
   <div class="text-white text-xl sm:text-5xl">

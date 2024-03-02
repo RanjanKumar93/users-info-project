@@ -1,0 +1,40 @@
+<%- include('partials/header') %>
+<a
+  class="fixed z-10 top-2 bg-teal-800 p-2 rounded-full text-white hover:bg-teal-950 left-2"
+  href="/home"
+  role="button"
+  >Home</a
+>
+<%if(locals.allUserData){%>
+<div
+  class="flex space-y-4 flex-col bg-violet-950 p-8 rounded-3xl absolute top-2"
+>
+  <div class="text-white text-xl sm:text-5xl">
+    <span class="mr-4">UserID: </span><span><%= userid %></span>
+  </div>
+  <div class="text-white text-xl sm:text-5xl">
+    <span class="mr-4">Role: </span><span><%= role %></span>
+  </div>
+</div>
+<div
+  class="flex flex-col w-11/12 max-w-screen-sm text-white bg-blue-600 p-4 rounded-2xl"
+>
+  <h1 class="text-center mb-8 text-2xl">Registered Users</h1>
+  <ul>
+    <% allUserData.forEach((each) => { %>
+    <li class="flex space-y-2 mb-2 justify-between text-xl mx-4 sm:mx-16">
+      <span><%= each.userid %></span>
+    </li>
+    <% }); %>
+  </ul>
+</div>
+<%}else{%>
+<div class="flex space-y-4 flex-col bg-violet-950 p-8 rounded-3xl">
+  <div class="text-white text-xl sm:text-5xl">
+    <span class="mr-4">UserID: </span><span><%= userid %></span>
+  </div>
+  <div class="text-white text-xl sm:text-5xl">
+    <span class="mr-4">Role: </span><span><%= role %></span>
+  </div>
+</div>
+<%}%> <%- include('partials/footer') %>

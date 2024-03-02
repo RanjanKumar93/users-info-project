@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+<a
+  class="fixed z-10 top-2 bg-teal-800 p-2 rounded-full text-white hover:bg-teal-950 left-2"
+  href="/home"
+  role="button"
+  >Home</a
+>
+<a
+  class="fixed z-10 top-2 bg-teal-800 p-2 rounded-full text-white hover:bg-teal-950 right-2"
+  href="/login/register"
+  role="button"
+  >Register</a
+>
+<div
+  class="relative bg-violet-900 max-w-2xl text-white h-3/6 w-full flex flex-col rounded-3xl p-8 items-center justify-center"
+>
+  <h1 class="mb-8 text-5xl">Login</h1>
+  <div class="w-10/12">
+    <form action="/login" class="space-y-4 text-xl" method="POST">
+      <div class="flex flex-col">
+        <label for="username" class="ml-4 mb-1">Username</label>
+        <input
+          type="text"
+          name="username"
+          class="py-1 text-black px-4 rounded-3xl"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="password" class="ml-4 mb-1">Password</label>
+        <input name="password" class="rounded-3xl text-black py-1 px-4" />
+      </div>
+      <div class="flex justify-center">
+        <button
+          type="submit"
+          class="bg-blue-600 hover:bg-blue-950 rounded-full p-2"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

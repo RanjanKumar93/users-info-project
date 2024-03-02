@@ -25,7 +25,7 @@ const pool = new Pool({
 pool.connect();
 
 app.get("/", (req, res) => {
-  res.render("home.ejs");
+  res.send("home.ejs");
 });
 
 app.get("/login", (req, res) => {
